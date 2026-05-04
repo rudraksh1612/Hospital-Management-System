@@ -11,7 +11,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Navbar from "./components/Navbar";
 import { Context } from "./main";
 import axios from "axios";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Loading from "./components/loading"; 
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
     const fetchUser = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:4000/api/v1/user/patient/me",
+          `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/patient/me`,
           { withCredentials: true }
         );
         setIsAuthenticated(true);

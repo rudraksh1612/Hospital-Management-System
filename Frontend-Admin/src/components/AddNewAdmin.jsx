@@ -25,7 +25,7 @@ const AddNewAdmin = () => {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/admin/addnew",
+        `${import.meta.env.VITE_BACKEND_URL}/api/v1/user/admin/addnew`,
         {
           firstName,
           lastName,
